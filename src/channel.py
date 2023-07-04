@@ -24,3 +24,13 @@ class Channel:
 
         channel = self.youtube.channels().list(id=self.channel_id, part='snippet,statistics').execute()
         print(json.dumps(channel, indent=2, ensure_ascii=False))
+
+    @classmethod
+    def get_service(cls) -> build:
+        """Возвращающий объект для работы с YouTube API"""
+        return build('youtube', 'v3', developerKey=cls.API_KEY)
+
+    def to_json(self, filename) -> None:
+        """Функция сохраняющая в файл значения атрибутов класса"""
+        with open(filename, "w") as f:
+            json.dump(self.__dict__, f, indent=2)
