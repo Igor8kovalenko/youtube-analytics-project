@@ -21,26 +21,24 @@ class Channel:
     def __str__(self):
         return f"{self.title}, {self.url}"
 
-    def __str__(self):
-        return f"{self.title} ({self.url})"
 
     def __add__(self, other):
-        return self.count_subscribers + other.subscriber_count
+        return int(self.count_subscribers) + int(other.count_subscribers)
 
     def __sub__(self, other):
-        return self.count_subscribers - other.subscriber_count
+        return int(self.count_subscribers) - int(other.count_subscribers)
 
     def __gt__(self, other):
-        return self.count_subscribers > other.subscriber_count
+        return int(self.count_subscribers) > int(other.count_subscribers)
 
     def __ge__(self, other):
-        return self.count_subscribers >= other.subscriber_count
+        return int(self.count_subscribers) >= int(other.count_subscribers)
 
     def __lt__(self, other):
-        return self.count_subscribers < other.subscriber_count
+        return int(self.count_subscribers) < int(other.count_subscribers)
 
     def __le__(self, other):
-        return self.count_subscribers <= other.subscriber_count
+        return int(self.count_subscribers) <= int(other.count_subscribers)
 
 
 
